@@ -19,7 +19,7 @@ WORKDIR=${SRCDIR:-/src}
 
 SPEC_FILE=${4:-*.spec}
 
-python -m pip install --upgrade pip wheel setuptools https://vpforce.eu/downloads/pyinstaller-6.5.0-py3-none-any.whl
+python -m pip install --upgrade -I pip wheel setuptools https://vpforce.eu/downloads/pyinstaller-6.5.0-py3-none-any.whl
 
 #
 # In case the user specified a custom URL for PYPI, then use
