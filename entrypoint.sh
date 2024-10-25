@@ -19,7 +19,19 @@ WORKDIR=${SRCDIR:-/src}
 
 SPEC_FILE=${4:-*.spec}
 
-python -m pip install --upgrade -I pip wheel setuptools==71.1.0 https://vpforce.eu/downloads/pyinstaller-6.5.0-py3-none-any.whl
+python -m pip install --upgrade -I pip wheel setuptools==71.1.0 
+
+apt-get update
+apt-get install -y gcc-mingw-w64-x86-64-win32 git
+
+# Build PyInstaller bootloader
+git clone --depth 1 --branch v6.11.0 https://github.com/pyinstaller/pyinstaller
+cd pyinstaller
+export CC=x86_64-w64-mingw32-gcc
+export PYINSTALLER_COMPILE_BOOTLOADER=1
+pip3 bdist_wheel
+python3 -m pip install --upgrade dist/*.whl
+cd ..
 
 #
 # In case the user specified a custom URL for PYPI, then use
