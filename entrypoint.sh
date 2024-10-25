@@ -28,6 +28,8 @@ export CC=x86_64-w64-mingw32-gcc
 export AR=x86_64-w64-mingw32-ar
 export STRIP=x86_64-w64-mingw32-strip
 export PYINSTALLER_COMPILE_BOOTLOADER=1
+export CFLAGS=-flto
+export LDFLAGS=-flto
 # python3 is native python, python is WIN32 python
 python3 setup.py bdist_wheel
 python -m pip install --upgrade dist/*.whl 
