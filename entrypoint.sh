@@ -26,10 +26,11 @@ git clone --depth 1 --branch v6.11.0 https://github.com/pyinstaller/pyinstaller
 cd pyinstaller
 export CC=x86_64-w64-mingw32-gcc
 export AR=x86_64-w64-mingw32-ar
-export STRIP=x86_64-w64-mingw32-ar
+export STRIP=x86_64-w64-mingw32-strip
 export PYINSTALLER_COMPILE_BOOTLOADER=1
+# python3 is native python, python is WIN32 python
 python3 setup.py bdist_wheel
-python -m pip install --upgrade dist/*.whl
+python -m pip install --upgrade dist/*.whl 
 cd ..
 
 #
