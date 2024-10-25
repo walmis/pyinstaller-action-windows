@@ -26,7 +26,7 @@ git clone --depth 1 --branch v6.11.0 https://github.com/pyinstaller/pyinstaller
 cd pyinstaller
 export CC=x86_64-w64-mingw32-gcc
 export PYINSTALLER_COMPILE_BOOTLOADER=1
-python -m pip bdist_wheel
+python setup.py bdist_wheel
 python -m pip install --upgrade dist/*.whl
 cd ..
 
