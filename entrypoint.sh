@@ -21,9 +21,6 @@ SPEC_FILE=${4:-*.spec}
 
 python -m pip install --upgrade -I pip wheel setuptools==71.1.0 
 
-apt-get update
-apt-get install -y gcc-mingw-w64-x86-64-win32 git
-
 # Build PyInstaller bootloader
 git clone --depth 1 --branch v6.11.0 https://github.com/pyinstaller/pyinstaller
 cd pyinstaller
