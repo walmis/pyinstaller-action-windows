@@ -19,7 +19,7 @@ WORKDIR=${SRCDIR:-/src}
 
 SPEC_FILE=${4:-*.spec}
 
-python -m pip install --upgrade -I pip wheel setuptools
+python3 -m pip install --upgrade -I pip wheel setuptools
 
 # Build PyInstaller bootloader
 git clone --depth 1 --branch v6.14.1 https://github.com/pyinstaller/pyinstaller
