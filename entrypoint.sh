@@ -56,7 +56,7 @@ fi
 cd $WORKDIR
 
 if [ -f $5 ]; then
-    pip install -r $5
+    python -m pip install -r $5
 fi # [ -f $5 ]
 
 
