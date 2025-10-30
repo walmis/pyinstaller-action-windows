@@ -19,7 +19,7 @@ WORKDIR=${SRCDIR:-/src}
 
 SPEC_FILE=${4:-*.spec}
 
-PYI_VERSION=${5}
+PYI_VERSION=${6}
 
 python3 -m pip install --upgrade -I pip wheel setuptools
 
