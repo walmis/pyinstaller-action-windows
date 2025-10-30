@@ -21,7 +21,7 @@ SPEC_FILE=${4:-*.spec}
 
 PYI_VERSION=${6}
 
-python3 -m pip install --upgrade -I pip wheel setuptools
+python3 -m pip install --upgrade -I pip wheel setuptools build
 
 # Build PyInstaller bootloader
 git clone --depth 1 --branch $PYI_VERSION https://github.com/pyinstaller/pyinstaller
@@ -33,7 +33,12 @@ export PYINSTALLER_COMPILE_BOOTLOADER=1
 export CFLAGS=-flto
 export LDFLAGS=-flto
 # python3 is native python, python is WIN32 python
+if [ -e pyproject.toml ]; then
+python3 -m build --wheel
+else
 python3 setup.py bdist_wheel
+fi
+
 python -m pip install --upgrade dist/*.whl 
 cd ..
 
