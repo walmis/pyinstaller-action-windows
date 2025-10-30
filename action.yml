@@ -25,6 +25,10 @@ inputs:
     description: 'Specify a file path for requirements.txt file'
     required: False
     default: "requirements.txt"
+  pyi_version:
+    description: 'Specify pyinstaller version (tag)'
+    required: False
+    default: "v6.16.0"
 outputs:
   output:
     description: 'The output of PyInstaller'
@@ -38,3 +42,4 @@ runs:
     - ${{ inputs.pypi_index_url }}
     - ${{ inputs.spec }}
     - ${{ inputs.requirements }}
+    - ${{ inputs.pyi_version }}

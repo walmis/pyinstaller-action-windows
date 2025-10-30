@@ -19,10 +19,12 @@ WORKDIR=${SRCDIR:-/src}
 
 SPEC_FILE=${4:-*.spec}
 
+PYI_VERSION=${5}
+
 python3 -m pip install --upgrade -I pip wheel setuptools
 
 # Build PyInstaller bootloader
-git clone --depth 1 --branch v6.14.1 https://github.com/pyinstaller/pyinstaller
+git clone --depth 1 --branch $PYI_VERSION https://github.com/pyinstaller/pyinstaller
 cd pyinstaller
 export CC=x86_64-w64-mingw32-gcc
 export AR=x86_64-w64-mingw32-ar
